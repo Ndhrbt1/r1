@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:r1/widgets/hero.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -6,7 +7,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Hero')),
+      appBar: AppBar(title: const Text('1')),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -17,7 +18,7 @@ class Home extends StatelessWidget {
                 children: <Widget>[
                   InkWell(
                     child: Hero(
-                      tag: 'heroX',
+                      tag: '1',
                       child: Container(width: 100.0, height: 100.0, color: Colors.green),
                     ),
                     onTap: () {
@@ -25,59 +26,20 @@ class Home extends StatelessWidget {
                       Navigator.push(context, route);
                     },
                   ),
-                  InkWell(
-                    child: Hero(
-                      tag: 'heroz',
-                      child: Container(width: 100.0, height: 100.0, color: Colors.blue),
-                    ),
-                    onTap: () {
-                      var route = MaterialPageRoute(builder: (context) => const WidgetHeroDetail());
-                      Navigator.push(context, route);
-                    },
-                  ),
+                  // InkWell(
+                  //   child: Hero(
+                  //     tag: 'heroz',
+                  //     child: Container(width: 100.0, height: 100.0, color: Colors.blue),
+                  //   ),
+                  //   onTap: () {
+                  //     var route = MaterialPageRoute(builder: (context) => const WidgetHeroDetail());
+                  //     Navigator.push(context, route);
+                  //   },
+                  // ),
                 ],
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class WidgetHeroDetail extends StatelessWidget {
-  const WidgetHeroDetail({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hero Detail'),
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Hero(
-              tag: 'heroX',
-              child: Container(
-                height: 100.0,
-                width: 200.0,
-                color: Colors.green,
-              ),
-            ),
-            const SizedBox(
-              width: 50,
-            ),
-            Hero(
-              tag: 'heroz',
-              child: Container(
-                height: 100.0,
-                width: 200.0,
-                color: Colors.blue,
-              ),
-            ),
-          ],
         ),
       ),
     );
